@@ -15,10 +15,10 @@ for top_dir, directory, files in os.walk(r'F:\project vs code'):
     for _files in files:
         abs_path=os.path.join(top_dir,_files) #here we joined the files along with their path mane konta kon directory te ache...
         size= os.path.getsize(abs_path) #here we calculate the size of the files
-        sorteddict[abs_path]=size
+        sorteddict[abs_path]=size #here we converted it into dict form to access keys and values... 
         #print(sorteddict)
         #print(f"files is :{abs_path}   size:{size}")
-
+#here we sorted the dict and printed the largest 20 files..
 items_shown=0
 for path, size in sorted(sorteddict.items(), key=lambda x:x[1], reverse=True):
     if items_shown > 19:
